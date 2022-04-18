@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FollowPlayer : MonoBehaviour
+{
+    // public variables
+    public GameObject player;
+
+    // private variables
+    private Vector3 offset = new Vector3(0, 5, -7);
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Use LateUpdate so the camera updates after the vehicle and prevents staggering
+    void LateUpdate()
+    {
+        // offset the camera behind the player
+        transform.position = player.transform.position + offset;
+    }
+}
